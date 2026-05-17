@@ -48,21 +48,21 @@ export function DesktopNav() {
       `}</style>
       <aside
         className={clsx(
-          'fixed inset-y-0 left-0 z-10 hidden flex-col border-r bg-background transition-all duration-300 sm:flex',
+          'fixed inset-y-0 left-0 z-10 hidden flex-col border-r bg-[#E0FFDB] text-black transition-all duration-300 sm:flex',
           isExpanded ? 'w-64' : 'w-14'
         )}
       >
         {/* Logo */}
-        <div className="flex items-center justify-between border-b p-4">
+        <div className="flex flex-col items-center border-b p-6">
           <Link
             href="/"
-            className="group flex h-9 w-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:h-8 md:w-8 md:text-base"
+            className="group flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground"
           >
-            <VercelLogo className="h-3 w-3 transition-all group-hover:scale-110" />
-            <span className="sr-only">OJT Atlas</span>
+            <VercelLogo className="h-8 w-8 transition-all group-hover:scale-110" />
+            <span className="sr-only">Atlas dashboard</span>
           </Link>
           {isExpanded && (
-            <span className="text-sm font-semibold">OJT Atlas</span>
+            <span className="mt-2 text-sm font-semibold">Atlas dashboard</span>
           )}
         </div>
 
@@ -70,7 +70,7 @@ export function DesktopNav() {
         <nav className="flex-1 space-y-2 overflow-y-auto px-2 py-4">
           <div className="space-y-2">
             {isExpanded && (
-              <div className="px-2 py-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+              <div className="px-2 py-2 text-xs font-semibold text-black uppercase tracking-wider">
                 Navigatie
               </div>
             )}
@@ -82,7 +82,7 @@ export function DesktopNav() {
                   href={item.href}
                   className={clsx(
                     'flex items-center gap-3 rounded-lg px-3 py-2 transition-colors',
-                    'text-muted-foreground hover:text-foreground hover:bg-accent',
+                    'text-black hover:text-black/80 hover:bg-accent',
                     isExpanded ? 'text-sm' : 'justify-center'
                   )}
                 >
@@ -97,7 +97,7 @@ export function DesktopNav() {
         {/* Settings Section */}
         <nav className="space-y-2 border-t p-2">
           {isExpanded && (
-            <div className="px-2 py-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+            <div className="px-2 py-2 text-xs font-semibold text-black uppercase tracking-wider">
               Instellingen
             </div>
           )}
@@ -109,7 +109,7 @@ export function DesktopNav() {
                 href={item.href}
                 className={clsx(
                   'flex items-center gap-3 rounded-lg px-3 py-2 transition-colors',
-                  'text-muted-foreground hover:text-foreground hover:bg-accent',
+                  'text-black hover:text-black/80 hover:bg-accent',
                   isExpanded ? 'text-sm' : 'justify-center'
                 )}
               >
@@ -124,7 +124,7 @@ export function DesktopNav() {
             onClick={() => setIsExpanded(!isExpanded)}
             className={clsx(
               'flex w-full items-center gap-3 rounded-lg px-3 py-2 transition-colors',
-              'text-muted-foreground hover:text-foreground hover:bg-accent',
+              'text-black hover:text-black/80 hover:bg-accent',
               isExpanded ? 'text-sm' : 'justify-center'
             )}
             title={isExpanded ? 'Balk inklappen' : 'Balk uitklappen'}
